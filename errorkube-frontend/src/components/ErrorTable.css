@@ -1,0 +1,78 @@
+/* Table container styling */
+.table-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f4f7fb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* General table styling */
+  .error-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .error-table th, .error-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  /* Table header styling */
+  .table-header {
+    background-color: #268efe;
+    color: white;
+  }
+  
+  .table-header-cell {
+    font-weight: 600;
+  }
+  
+  /* Table row hover effect */
+  .table-row {
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table-row:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Cell styling */
+  .table-cell {
+    color: #333;
+  }
+  
+  /* Status column styling */
+  .table-cell.status {
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  .table-cell.status[data-status="error"] {
+    color: #e74c3c;
+  }
+  
+  .table-cell.status[data-status="warning"] {
+    color: #f39c12;
+  }
+  
+  /* Time column date formatting */
+  .table-cell.time {
+    font-style: italic;
+    color: #888;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .table-header-cell {
+      font-size: 14px;
+    }
+    .table-cell {
+      font-size: 14px;
+    }
+  }
+  

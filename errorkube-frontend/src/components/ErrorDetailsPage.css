@@ -1,0 +1,115 @@
+/* General styling */
+.error-details-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  color: #555;
+  margin-top: 5px;
+  margin-left: 5%;
+}
+
+.breadcrumb-item {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #333;
+  text-decoration: none;
+  cursor: default;
+}
+
+.error-title {
+  text-align: center;
+  color: #1F3A5F;
+  font-size: 3em;
+  margin-top: unset;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Grid layout for columns */
+.error-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-size: 1.7em;
+  color: #3A6D91;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
+}
+
+/* Content inside each card */
+.card-content p {
+  font-size: 1.1em;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.card-content strong {
+  color: #1F3A5F;
+}
+
+/* Error message styling */
+.error-message {
+  font-size: 1.2em;
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .error-details-container {
+    padding: 20px;
+  }
+
+  .error-title {
+    font-size: 2em;
+  }
+
+  .error-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+  }
+}
