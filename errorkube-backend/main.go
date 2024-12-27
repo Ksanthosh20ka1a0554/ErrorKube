@@ -37,6 +37,10 @@ func main() {
 	r.HandleFunc("/api/events", handleGetAllEvents)
 	r.HandleFunc("/api/events/{uid}", handleGetEventByUID).Methods("GET")
 
+	// Serve React build static files
+	reactBuildPath := "./build" // Path to React build files
+	r.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir(reactBuildPath))))
+
 	// Wrap router with CORS middleware
 	handlerWithCORS := enableCORS(r)
 
@@ -46,7 +50,7 @@ func main() {
 
 	go handleShutdown(cancel)
 
-	log.Println("Starting WebSocket and REST API server on :8080")
+	log.Println("Starting WebSocket, REST API, and React frontend server on :8080")
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: handlerWithCORS,
