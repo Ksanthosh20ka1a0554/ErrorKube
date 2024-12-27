@@ -39,7 +39,7 @@ const App = () => {
     // Fetch data from /api/events
     const fetchApiEvents = async () => {
       try {
-        const response = await fetch("http://backend-service.default.svc.cluster.local:8080/api/events");
+        const response = await fetch("/api/events");
         if (response.ok) {
           const data = await response.json();
 
@@ -73,7 +73,7 @@ const App = () => {
     };
 
     // Establish WebSocket connection
-    const ws = new WebSocket("ws://backend-service.default.svc.cluster.local:8080/events");
+    const ws = new WebSocket("/events");
     ws.onopen = () => {
       console.log("WebSocket connection established.");
     };
