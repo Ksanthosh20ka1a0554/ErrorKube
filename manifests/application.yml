@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: error-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: error-backend
+  template:
+    metadata:
+      labels:
+        app: error-backend
+    spec:
+      serviceAccountName: error-backend-sa
+      containers:
+      - name: error-backend
+        image: santhosh9515/errorkube:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://mongo-service.default.svc.cluster.local:27017"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: error-backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: NodePort
